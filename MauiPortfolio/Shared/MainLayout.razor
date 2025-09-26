@@ -1,0 +1,21 @@
+﻿@inherits LayoutComponentBase
+<header class="topnav" role="navigation" aria-label="primary">
+  <nav>
+    <NavLink href="">Home</NavLink>
+    <NavLink href="about">About</NavLink>
+    <NavLink href="projects">Projects</NavLink>
+    <NavLink href="contact">Contact</NavLink>
+  </nav>
+</header>
+<main class="content">
+    @Body
+</main>
+<footer class="site-footer">
+  © @DateTime.Now.Year Your Name · Built with .NET MAUI + Blazor Hybrid
+</footer>
+<style>
+  .topnav { position:sticky; top:0; backdrop-filter:saturate(130%) blur(8px); padding:10px 16px; border-bottom:1px solid #222; }
+  .topnav nav { display:flex; gap:16px; }
+  .content { padding:16px; }
+  a.active { font-weight:700; }
+</style>

@@ -1,0 +1,32 @@
+﻿@page "/projects"
+@using MauiPortfolio.Components
+
+@code {
+
+    private readonly List<ProjectItem> items = new()
+    {
+        new("maui-weather", "Maui Weather", "A sample MAUI + Blazor app.",
+            "/projects/maui-weather"),
+        new("todo-pro", "Todo Pro", "Cross-platform todo with sync.",
+            "/projects/todo-pro"),
+        new("photo-grid", "Photo Grid", "Image gallery and effects.",
+            "/projects/photo-grid"),
+    };
+
+    public record ProjectItem(string Slug, string Title, string Summary, string Link);
+}
+
+<h1>Projects</h1>
+
+<div class="grid">
+  @foreach (var p in items)
+    {
+        <ProjectCard Title="@p.Title"
+                     Summary="@p.Summary"
+                     Link="@($"/projects/{p.Slug}")" />
+    }
+</div>
+
+<style>
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); }
+</style>

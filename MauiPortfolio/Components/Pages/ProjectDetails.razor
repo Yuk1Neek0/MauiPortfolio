@@ -1,0 +1,29 @@
+@page "/projects/{Slug}"
+
+@using PD = MauiPortfolio.Services.ProjectData   
+
+<h1>@proj?.Title</h1>
+
+@if (proj is null)
+{
+        <p>Project not found.</p>
+}
+else
+{
+        <p>@proj.Description</p>
+    @if (!string.IsNullOrWhiteSpace(proj.RepoUrl))
+    {
+                <p><a href="@proj.RepoUrl" target="_blank" rel="noopener">View repository ¡ú</a></p>
+    }
+}
+
+@code {
+    [Parameter] public string Slug { get; set; } = "";
+
+    private PD.Project? proj;      
+
+    protected override void OnParametersSet()
+    {
+        proj = PD.Get(Slug);         
+    }
+}

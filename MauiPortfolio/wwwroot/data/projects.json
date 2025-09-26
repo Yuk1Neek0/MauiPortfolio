@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "maui-weather",
+    "title": "Maui Weather",
+    "summary": "A sample MAUI + Blazor app.",
+    "tags": [ ".NET MAUI", "Blazor" ],
+    "image": "images/weather.png"
+  },
+  {
+    "slug": "todo-pro",
+    "title": "Todo Pro",
+    "summary": "Cross-platform todo with sync.",
+    "tags": [ "MAUI", "SQLite" ],
+    "image": "images/todo.png"
+  },
+  {
+    "slug": "photo-grid",
+    "title": "Photo Grid",
+    "summary": "Image gallery and effects.",
+    "tags": [ "Camera", "Graphics" ],
+    "image": "images/photo.png"
+  }
+]
